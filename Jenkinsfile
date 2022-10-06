@@ -1,20 +1,4 @@
-pipeline {
-        agent any 
-        stages {
-            
-            stage('Downloading the dependencies') {
-                steps {
-                    sh "npm install"
-                }
-            }
+ @Library('robot-shared-library@main') _
 
-            stage('Lint Checks') {
-                steps {
-                    sh "echo Installing jslint"
-                    sh "npm i jslint"
-                    sh "node_modules/jslint/bin/jslint.js server.js"
-                    }
-                }
-            }
-        }    // end of statges 
+nodejs()
     
